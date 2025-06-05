@@ -2,7 +2,7 @@
     <resource methods="GET" uri-template="/greet">
         <inSequence>
             <respond>
-                <json>{"message":"Hello Peace agiain from WSO2 EI"}</json>
+                <json>{"message":"Hello Peace again from WSO2 EI"}</json>
             </respond>
         </inSequence>
     </resource>
