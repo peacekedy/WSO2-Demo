@@ -18,11 +18,11 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to GitLab Registry
-        run: echo "${{ secrets.GITLAB_TOKEN }}" | docker login gitlab.dokuma.digital -u "${{ secrets.GITLAB_USER }}" --password-stdin
+        run: echo "${{ secrets.GITLAB_TOKEN }}" | docker login gitlab.dokuma.digital:5050 -u "${{ secrets.GITLAB_USER }}" --password-stdin
 
       - name: Build and push Docker image
         run: |
           REPO="${{ secrets.GITLAB_REPO }}"
-          IMAGE_TAG="gitlab.dokuma.digital/${REPO}:latest"
+          IMAGE_TAG="gitlab.dokuma.digital:5050/${REPO}:latest"
           echo "Building and pushing image: $IMAGE_TAG"
           docker buildx build --platform linux/amd64 -t "$IMAGE_TAG" . --push
