@@ -22,6 +22,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE_TAG="gitlab.dokuma.digital/wso-sample/wso2-ei-demo:latest"
-          echo "Building image: $IMAGE_TAG"
+          REPO="${{ secrets.GITLAB_REPO }}"
+          IMAGE_TAG="gitlab.dokuma.digital/${REPO}:latest"
+          echo "Building and pushing image: $IMAGE_TAG"
           docker buildx build --platform linux/amd64 -t "$IMAGE_TAG" . --push
