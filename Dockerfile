@@ -6,7 +6,7 @@ COPY HelloWorldAPI.car /home/wso2carbon/wso2ei-6.6.0/repository/deployment/serve
 # Optionally include deployment.toml if you have any custom configs
 # COPY deployment.toml /home/wso2carbon/wso2ei-6.6.0/conf/
 
-EXPOSE 8280 8243
+EXPOSE 8280 8243 9443
 
 CMD ["/home/wso2carbon/wso2ei-6.6.0/bin/integrator.sh"]
 
