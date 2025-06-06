@@ -1,4 +1,4 @@
-FROM wso2/wso2ei-integrator:6.6.0
+FROM wso2/wso2mi:4.0.0
 
 # Copy the .car file to the carbonapps folder
 COPY HelloWorldAPI.car /home/wso2carbon/wso2ei-6.6.0/repository/deployment/server/carbonapps/
