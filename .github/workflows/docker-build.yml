@@ -23,6 +23,6 @@ jobs:
       - name: Build and push Docker image
         run: |
           REPO="${{ secrets.GITLAB_REPO }}"
-          IMAGE_TAG="gitlab.dokuma.digital:5050/${REPO}:latestP"
+          IMAGE_TAG="gitlab.dokuma.digital:5050/${REPO}:latestV"
           echo "Building and pushing image: $IMAGE_TAG"
           docker buildx build --platform linux/amd64 -t "$IMAGE_TAG" . --push
